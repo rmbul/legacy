@@ -4,8 +4,7 @@ Note: I wasn't able to successfully sort shipments by properties other than `day
 
 
 I added a commment regarding the above issue, pasting here as well:
-
-this is the change that I believe would have fixed it (checking the typeof and using .localCompare for strings:
+this is the change that I believe would have fixed it (checking the typeof and using .localCompare for strings):
 `if (order === "ASC") {
         result = result.sort((a, b) => {
             if (comparator === "daysAgoShipped") {
@@ -38,3 +37,5 @@ this is the change that I believe would have fixed it (checking the typeof and u
             }
         });
     } `
+
+There is also an error in the console.log for #7; both parameters are not wrapped {}. This is a typo and `order` should be inside the object.
